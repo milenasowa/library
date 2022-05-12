@@ -13,7 +13,9 @@ class Book {
         this.pages = pages;
         this.booked = booked;
     }
-
+   czytajKsiazke(){
+       console.log('Title : ' + this.title)
+   }
 }
 class Library {
     name: string;
@@ -29,39 +31,56 @@ class Library {
         this.listOfBooks.push(book)
     }
 
-    deleteBook( titleBook:string) {
-        let newList: Book [] = []; 
-        newList = this.listOfBooks.filter(  (value: Book,index: number, array:Book[]) => {
-                    return value.title !== titleBook
+    deleteBook(titleBook: string): void {
+        // let newList: Book[] = [];
+        this.listOfBooks = this.listOfBooks.filter((value: Book, index: number, array: Book[]) => {
+            return value.title !== titleBook
         })
-        this.listOfBooks = newList;
+        // this.listOfBooks = newList;
+
+    }
+    findBook(titleBook: string): Book | undefined {
+        let result = this.listOfBooks.find((book: Book, index: number, array: Book[]) => {
+            return book.title === titleBook
+        })
+        return result
     }
 
 }
 
-let library: Library = new Library ("Ump", "Poznań")
-let library2: Library = new Library ("Uam", "Warszawa")
+let library: Library = new Library("Ump", "Poznań")
+let library2: Library = new Library("Uam", "Warszawa")
 
 
 
 
-function addBookToLibrary (): void {
+function addBookToLibrary(): void {
     let harryPotter: Book = new Book("Harry potter", "J.K Rowling", 2000, 950, false)
-    let wladcaPierscieni: Book = new Book ("Władca pierścienia", "xyz", 1997, 652, false)
-    library.addBook ( harryPotter);
-    library.addBook ( wladcaPierscieni);
-    
+    harryPotter.czytajKsiazke();
 
+    let wladcaPierscieni: Book = new Book("Władca pierścienia", "xyz", 1997, 652, false)
+    wladcaPierscieni.czytajKsiazke()
+
+    library.addBook(harryPotter);
+    library.addBook(wladcaPierscieni);
 }
 
-function deleteBookFromLibrary (): void {
+function deleteBookFromLibrary(): void {
     library.deleteBook('Harry potter')
-    
+
 }
-function showListOfLibrary () : void {
-    console.log (library);
+function showListOfLibrary(): void {
+    console.log(library);
     console.log(library2)
 }
-
+function moveBooksBetweenLibrary(): void {
+    let znalezione: Book | undefined = library.findBook("Harry potter");
+    if (znalezione !== undefined) {
+        library.deleteBook(znalezione?.title);
+        library2.addBook(znalezione)
+    } else {
+        alert("nie ma książki")
+    }
+}
 
 
