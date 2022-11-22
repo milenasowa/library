@@ -26,16 +26,20 @@ let dziady = new Book("Dziady", "Mickiewicz", 500);
 let wesele = new Book("Wesele", "Ktoś", 200);
 class Library {
     constructor(name, city, numberOfShelfs) {
-        this.listOfFantasyBooks = [
-            aniaZZielonegoWzgorza,
-            perswazje,
-            shrek,
-        ];
         this.name = name;
         this.city = city;
         this.numberOfShelfs = numberOfShelfs;
     }
 }
+// let listOfComedyBooks  = [
+//     potop,
+//     dziady,
+// ]
+// let listOfFantasyBooks = [
+// aniaZZielonegoWzgorza,
+// perswazje,
+// shrek,
+// ]
 let bibliotekaPoznanFantasy = new Library("Biblioteka fantasy", "Poznań", 3);
 let bibliotekaMiliczDrama = new Library("Biblioteka drama", "Milicz", 5);
 function showBookInformation() {
@@ -44,3 +48,15 @@ function showBookInformation() {
 function showFantasyLibrary() {
     console.log(bibliotekaPoznanFantasy);
 }
+function showSecondLibrary() {
+    console.log(bibliotekaPoznanFantasy, bibliotekaMiliczDrama);
+}
+class toy {
+    constructor(name) {
+        this.listOfToys = [];
+        this.name = name;
+        this.listOfToys.push("misiowate");
+    }
+}
+let mis = new toy("Miś");
+console.log(mis);

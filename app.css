@@ -17,4 +17,11 @@ body #fantasyLibrary {
   cursor: pointer;
   background-color: #2aa81c;
 }
+
+body #secondLibrary {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  background-color: #c51818;
+}
 /*# sourceMappingURL=app.css.map */

@@ -16,10 +16,12 @@ class Book {
      this.title = title;
      this.author= author;
      this.numberOfPages=numberOfPages;
+     
     }
     title: string;
     author: string;
     numberOfPages: number
+    
     
 }
 let aniaZZielonegoWzgorza = new Book ("Ania z Zielonego Wzgórza","L.Mound-Montgomery", 700);
@@ -30,37 +32,71 @@ let dziady = new Book ("Dziady", "Mickiewicz", 500);
 let wesele = new Book ("Wesele", "Ktoś", 200);
 
 class Library {
+
     constructor(name:string, city:string, numberOfShelfs: number){
         this.name = name;
         this.city = city;
         this.numberOfShelfs = numberOfShelfs;
-        
+       
+
     }
     name: string;
     city: string;
     numberOfShelfs : number;
+ 
+    
 
-    listOfFantasyBooks : any = [
-        aniaZZielonegoWzgorza,
-        perswazje,
-        shrek,
-   ]
+    
+    
+//     listOfFantasyBooks : any = 
+//         aniaZZielonegoWzgorza,
+//         perswazje,
+//         shrek,
+//    ]
+//    listOfComedyBooks: any = [
+//     potop,
+//     dziady,
+//  ]
    
     
 }
-let bibliotekaPoznanFantasy = new Library ("Biblioteka fantasy", "Poznań", 3);
-let bibliotekaMiliczDrama = new Library ("Biblioteka drama", "Milicz", 5);
 
+// let listOfComedyBooks  = [
+//     potop,
+//     dziady,
+// ]
+// let listOfFantasyBooks = [
+// aniaZZielonegoWzgorza,
+// perswazje,
+// shrek,
+// ]
+let bibliotekaPoznanFantasy = new Library ("Biblioteka fantasy", "Poznań", 3, )
+;
+let bibliotekaMiliczDrama = new Library ("Biblioteka drama", "Milicz", 5,);
 function showBookInformation() {
     console.log(aniaZZielonegoWzgorza)
 }
 
-
-
-
 function showFantasyLibrary(){
     console.log(bibliotekaPoznanFantasy)
-   
+}
+function showSecondLibrary(){
+    console.log(bibliotekaPoznanFantasy, bibliotekaMiliczDrama)
+}
+
+
+class toy {
+    constructor(name:string){
+        this.name = name
+        this.listOfToys.push("misiowate")
+    }
+    name: string
+    listOfToys : any =[]
     
 
+
 }
+
+let mis = new toy ("Miś")
+console.log(mis)
+   
