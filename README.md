@@ -4,6 +4,8 @@ how to start project:
 3. go live server
 
 what to do
+BOOK - (at least 3 fields)
+LIBRARY - (at least 3 fields)
 1. CLICK - SHOW BOOK-
 some Example book
 2. CLICK - SHOW FANTASY LIBRARY - library which contain five fantasy books. 

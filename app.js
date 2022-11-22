@@ -11,3 +11,36 @@ function showListOfLibrary() {
 function moveBooksBetweenLibrary() {
     console.log("move book");
 }
+class Book {
+    constructor(title, author, numberOfPages) {
+        this.title = title;
+        this.author = author;
+        this.numberOfPages = numberOfPages;
+    }
+}
+let aniaZZielonegoWzgorza = new Book("Ania z Zielonego Wzgórza", "L.Mound-Montgomery", 700);
+let perswazje = new Book("Perswazje", "Jane Austen", 550);
+let shrek = new Book("Shrek", "J.Talkien", 300);
+let potop = new Book("Potop", "Sienkiewicz", 1000);
+let dziady = new Book("Dziady", "Mickiewicz", 500);
+let wesele = new Book("Wesele", "Ktoś", 200);
+class Library {
+    constructor(name, city, numberOfShelfs) {
+        this.listOfFantasyBooks = [
+            aniaZZielonegoWzgorza,
+            perswazje,
+            shrek,
+        ];
+        this.name = name;
+        this.city = city;
+        this.numberOfShelfs = numberOfShelfs;
+    }
+}
+let bibliotekaPoznanFantasy = new Library("Biblioteka fantasy", "Poznań", 3);
+let bibliotekaMiliczDrama = new Library("Biblioteka drama", "Milicz", 5);
+function showBookInformation() {
+    console.log(aniaZZielonegoWzgorza);
+}
+function showFantasyLibrary() {
+    console.log(bibliotekaPoznanFantasy);
+}
