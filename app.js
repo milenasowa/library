@@ -2,19 +2,40 @@
 // u1
 // u2
 function addBookToLibrary() {
-    // ??
-    console.log("add to library");
+    // 
+    let ksiazka3 = new Book("kicia Kocia", "Anna Nowak", 20);
+    bibliotekaPoznanFantasy.listofBooks.push(ksiazka3);
+    console.log(bibliotekaPoznanFantasy);
 }
 // u3
+/**
+ * 1. stwofrzyc nowa pusta liste typu book
+ * 2. wziac liste ksiazek obecnie umieszczonych w bibliotece poznan fanstasy
+ * 3. iterowac po tej liscie
+ * 4. jesli element ma tytuł rózny od ania z zielonego wzgórza ro przenies element do nowehj listy
+ * 5. zamienic liste obecna z nową listą bez usuwanej ksiazki
+ * 6. odswiezoną bibliotekę wyswietlic w console log
+ */
 function deleteBookFromLibrary() {
     // ??
-    console.log("delete book");
+    let listOfActualBooks = [];
+    // for ( let i=0; i <= bibliotekaPoznanFantasy.listofBooks.length;i++){
+    //      let book = bibliotekaPoznanFantasy.listofBooks[i]
+    //     console.log(book);
+    // }
+    // var arr = ["1","2","3","4"];
+    // arr.forEach((element)=>{
+    //     console.log(element)
+    // })
+    bibliotekaPoznanFantasy.listofBooks.forEach((book) => {
+        if (book.title !== "Ania z Zielonego Wzgórza") {
+            listOfActualBooks.push(book);
+        }
+    });
+    bibliotekaPoznanFantasy.listofBooks = listOfActualBooks;
+    console.log(bibliotekaPoznanFantasy);
 }
 // u4
-function showListOfLibrary() {
-    // ??
-    console.log("show list of books");
-}
 // u5
 function moveBooksBetweenLibrary() {
     // ??
@@ -50,11 +71,10 @@ class Library {
     // u46, u53
     constructor(name, city, numberOfShelfs, listofBooks) {
         this.listofBooks = [];
-        let igor = "jest mistrzem";
         // u47, u54
         this.name = name;
         // u48, u55
-        this.city = igor;
+        this.city = city;
         // u49, u56
         this.numberOfShelfs = numberOfShelfs;
         // u50, u57
