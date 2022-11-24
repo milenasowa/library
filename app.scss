@@ -3,36 +3,13 @@ body{
     height: 100%;
     background-color: aquamarine;
 
-    // #button {
-    //     width: 50px;
-    //     height: 50px;
-    //     cursor: pointer;
-    //     background-color: greenyellow;
-    // }
-    // #button_del{
-    //     width: 50px;
-    //     height: 50px;
-    //     cursor: pointer;
-    //     background-color: red;
-    // }
-    // #button_show{
-    //     width: 50px;
-    //     height: 50px;
-    //     cursor: pointer;
-    //     background-color: rgb(21, 0, 255);
-    // }
-    // #button_move{
-    //     width: 50px;
-    //     height: 50px;
-    //     cursor: pointer;
-    //     background-color: rgb(255, 0, 255);
-    // }
-    #bookInfo{
-        width: 80px;
-        height: 80px;
+    #button {
+        width: 70px;
+        height: 50px;
         cursor: pointer;
-        background-color: rgb(255, 0, 255);
+        background-color: rgb(69, 178, 225);
     }
+    
     #fantasyLibrary{
         width: 80px;
         height: 80px;
@@ -45,5 +22,29 @@ body{
         cursor: pointer;
         background-color: rgb(197, 24, 24);
 
+    }
+    #button_del{
+        width: 70px;
+        height: 50px;
+        cursor: pointer;
+        background-color: rgb(242, 255, 0);
+    }
+    
+    #button_move{
+        width: 70px;
+        height: 50px;
+        cursor: pointer;
+        background-color: rgb(145, 66, 202);
+    }
+    #bookInfo{
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+        background-color: rgb(255, 0, 255);
+    }
+    #line{
+        width: 100px;
+        height: 10px;
+        background-color: black;
     }
 }

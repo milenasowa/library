@@ -4,11 +4,11 @@ body {
   background-color: aquamarine;
 }
 
-body #bookInfo {
-  width: 80px;
-  height: 80px;
+body #button {
+  width: 70px;
+  height: 50px;
   cursor: pointer;
-  background-color: magenta;
+  background-color: #45b2e1;
 }
 
 body #fantasyLibrary {
@@ -23,5 +23,32 @@ body #secondLibrary {
   height: 80px;
   cursor: pointer;
   background-color: #c51818;
+}
+
+body #button_del {
+  width: 70px;
+  height: 50px;
+  cursor: pointer;
+  background-color: #f2ff00;
+}
+
+body #button_move {
+  width: 70px;
+  height: 50px;
+  cursor: pointer;
+  background-color: #9142ca;
+}
+
+body #bookInfo {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  background-color: magenta;
+}
+
+body #line {
+  width: 100px;
+  height: 10px;
+  background-color: black;
 }
 /*# sourceMappingURL=app.css.map */
