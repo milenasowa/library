@@ -45,9 +45,36 @@ function deleteBookFromLibrary(){
 
 // u4
 // u5
+/**
+ * 1. utworzenie zmiennej tymczasowej typu book
+ * 2. utworzenie pustej tymczasowej listy
+ * 3. iterowanie po biblioteka poznan fantasy 
+ * 4. if element.tytuł równa się  ania z zielonego wzgorza to przypisz go do zmiennej tymczasowej
+ * 5. else, elementy dodaj do tymczasowej listy ksiazki do przenieseinia
+ * 6. do listy ksiazkek biblioteki poznan fantasy dodac listę ksiazki do przeniesienia
+ * 7. do bi
+ */
 function moveBooksBetweenLibrary(){
     // ??
-    console.log("move book")
+    // let aniaDoPrzeniesienia: Book;
+
+    let ksiazkiDoPrzeniesienia: Book[] = [];
+
+    bibliotekaPoznanFantasy.listofBooks.forEach((book, i)=>{
+        if (book.title === "Ania z Zielonego Wzgórza"){
+            bibliotekaMiliczDrama.listofBooks.push(book)
+        }else{
+            ksiazkiDoPrzeniesienia.push(book)
+        }
+    })
+
+    bibliotekaPoznanFantasy.listofBooks = ksiazkiDoPrzeniesienia
+    
+    console.log(bibliotekaPoznanFantasy, bibliotekaMiliczDrama)
+   
+
+
+
 }
 // u6
 class Book {
