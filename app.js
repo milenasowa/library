@@ -16,24 +16,16 @@ function addBookToLibrary() {
  * 5. zamienic liste obecna z nową listą bez usuwanej ksiazki
  * 6. odswiezoną bibliotekę wyswietlic w console log
  */
-function deleteBookFromLibrary() {
+function deleteBookFromLibrary(bookTitle) {
     // ??
-    let listOfActualBooks = [];
-    // for ( let i=0; i <= bibliotekaPoznanFantasy.listofBooks.length;i++){
-    //      let book = bibliotekaPoznanFantasy.listofBooks[i]
-    //     console.log(book);
-    // }
-    // var arr = ["1","2","3","4"];
-    // arr.forEach((element)=>{
-    //     console.log(element)
-    // })
+    let booksForMove = [];
     bibliotekaPoznanFantasy.listofBooks.forEach((book) => {
-        if (book.title !== "Ania z Zielonego Wzgórza") {
-            listOfActualBooks.push(book);
+        if (book.title !== bookTitle) {
+            booksForMove.push(book)
         }
     });
-    bibliotekaPoznanFantasy.listofBooks = listOfActualBooks;
-    console.log(bibliotekaPoznanFantasy);
+    bibliotekaPoznanFantasy.listofBooks = booksForMove;
+    console.log(bibliotekaPoznanFantasy)
 }
 // u4
 // u5
@@ -61,6 +53,9 @@ function moveBooksBetweenLibrary() {
     bibliotekaPoznanFantasy.listofBooks = ksiazkiDoPrzeniesienia;
     console.log(bibliotekaPoznanFantasy, bibliotekaMiliczDrama);
 }
+// function deleteThisBook (title:string){
+//     return "usunięto książkę" + title
+// }
 // u6
 class Book {
     //u8, u14, u20, u26, u32, u38
