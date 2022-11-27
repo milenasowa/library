@@ -1,153 +1,65 @@
-// u1
-// u2
-function addBookToLibrary (){
-// 
-let ksiazka3 : Book = new Book ("kicia Kocia", "Anna Nowak", 20)
+type Unit = "g" | "ml" | "l"
 
-bibliotekaPoznanFantasy.listofBooks.push(ksiazka3)
-console.log(bibliotekaPoznanFantasy)
-}
-// u3
-/**
- * 1. stwofrzyc nowa pusta liste typu book
- * 2. wziac liste ksiazek obecnie umieszczonych w bibliotece poznan fanstasy
- * 3. iterowac po tej liscie
- * 4. jesli element ma tytuł rózny od ania z zielonego wzgórza ro przenies element do nowehj listy
- * 5. zamienic liste obecna z nową listą bez usuwanej ksiazki
- * 6. odswiezoną bibliotekę wyswietlic w console log
- */
-function deleteBookFromLibrary(title:string): void{
-    // ??
-    let booksForMove : Book[] = []
-    bibliotekaPoznanFantasy.listofBooks.forEach((Book, i)=>{
-      if (Book.title !== title){
-        booksForMove.push(Book)
-      }
-    })
+class Product {
     
-    bibliotekaPoznanFantasy.listofBooks = booksForMove
-    
-    
-    
-
-    }
-  
-    
-    
-
-// u4
-// u5
-/**
- * 1. utworzenie zmiennej tymczasowej typu book
- * 2. utworzenie pustej tymczasowej listy
- * 3. iterowanie po biblioteka poznan fantasy 
- * 4. if element.tytuł równa się  ania z zielonego wzgorza to przypisz go do zmiennej tymczasowej
- * 5. else, elementy dodaj do tymczasowej listy ksiazki do przenieseinia
- * 6. do listy ksiazkek biblioteki poznan fantasy dodac listę ksiazki do przeniesienia
- * 7. do bi
- */
-function moveBooksBetweenLibrary(){
-    // ??
-    // let aniaDoPrzeniesienia: Book;
-
-    let ksiazkiDoPrzeniesienia: Book[] = [];
-
-    bibliotekaPoznanFantasy.listofBooks.forEach((book, i)=>{
-        if (book.title === "Ania z Zielonego Wzgórza"){
-            bibliotekaMiliczDrama.listofBooks.push(book)
-        }else{
-            ksiazkiDoPrzeniesienia.push(book)
-        }
-    })
-
-    bibliotekaPoznanFantasy.listofBooks = ksiazkiDoPrzeniesienia
-    
-    console.log(bibliotekaPoznanFantasy, bibliotekaMiliczDrama)
-   
-
-
-
-}
-// function deleteThisBook (title:string){
-//     return "usunięto książkę" + title
-
-// }
-
-
-// u6
-class Book {
-    //u8, u14, u20, u26, u32, u38
-    constructor(title: string, author: string, numberOfPages: number){
-     // u9, u15, u21, u27, u33, u39
-     this.title = title;
-     // u10, u16, u22, u28, u34, u40
-     this.author= author;
-     // u11, u17, u23, u29, u35, u41
-     this.numberOfPages=numberOfPages;
-     //12,u18,u24, u30, u36, u42
-    }
-    title: string;
-    author: string;
-    numberOfPages: number
-    
-    
-}
-// u-7
-let aniaZZielonegoWzgorza: Book = new Book ("Ania z Zielonego Wzgórza","L.Mound-Montgomery", 700);
-// u13
-let perswazje = new Book ("Perswazje", "Jane Austen", 550);
-// u19
-let shrek = new Book ( "Shrek", "J.Talkien", 300);
-// u25
-let potop = new Book ("Potop", "Sienkiewicz", 1000);
-// u31
-let dziady = new Book ("Dziady", "Mickiewicz", 500);
-// u-37
-let wesele = new Book ("Wesele", "Ktoś", 200);
-// u-43
-class Library {
-    // u46, u53
-    constructor(name:string, city:string, numberOfShelfs: number, listofBooks: Book [] ){
-       
-        // u47, u54
-        this.name = name;
-        // u48, u55
-        this.city = city;
-        // u49, u56
-        this.numberOfShelfs = numberOfShelfs;
-        // u50, u57
-        this.listofBooks = listofBooks;
-        //  u-51 , u58
-
+    constructor(name:string, weight: number, value: Unit, packed: boolean ){
+     this.name = name;
+     this.weight = weight;
+     this.packed = packed;
+     this.value = value
     }
     name: string;
-    city: string;
-    numberOfShelfs : number;
-    listofBooks: Book [] = [];
-    // let milenka:string = "jest osłem"
+    weight: number;
+    packed: boolean;
+    value: Unit
     
 }
+let bread:Product = new Product ("chleb", 200, "g", true);
+let cola: Product = new Product("cola", 2, "l", true);
+let butter:Product = new Product("masło", 250, "g", true);
+let milk:Product = new Product("mleko", 1, "l", false);
+let chocolade:Product = new Product("czekolada", 100,"g", true);
+let water:Product = new Product("woda", 1.5, "l", true)
 
-// u-44, 
-let list1 : Book[] = [aniaZZielonegoWzgorza, perswazje]
-// u45
-let bibliotekaPoznanFantasy = new Library ("Biblioteka fantasy", "Poznań", 3,  list1);
-// u52
-let bibliotekaMiliczDrama = new Library ("Biblioteka drama", "Milicz", 5,[potop]);
-// 59
-function showBookInformation() {
-    // ??
-    console.log(aniaZZielonegoWzgorza)
-}
-// 60
-function showFantasyLibrary(){
-    // ??
-    console.log(bibliotekaPoznanFantasy)
-}
-// 61
-function showSecondLibrary(){
-    //
-    console.log(bibliotekaMiliczDrama)
-}
+class Shop {
+    constructor(name: string, city:string, listOfProducts:Product[] ){
+        this.name = name;
+        this.city = city;
+        this.listOfProducts = listOfProducts;
 
-//u-61
+    }
+    name:string;
+    city:string;
+    listOfProducts: Product[] = []
+
+}
+let biedronkaListOfProducts: Product[] = [bread, cola, butter];
+let miliczListOfProduct: Product[]=[milk, chocolade, water]
+let biedronka: Shop = new Shop("Biedronka", "Szamotuły", biedronkaListOfProducts);
+let auchan: Shop = new Shop("Auchan", "Milicz", miliczListOfProduct);
+
+function addProductToShop(item: Product){
+// let newProduct: Product = new Product("piwo", 500, "ml", true)
+ 
+biedronka.listOfProducts.push(item)
+console.log(biedronka)
+
+}
+/**
+ * 1.utworzenie pustej listy w celu przechowania elementów pozostałych po usunięciu jednego
+ * 2.literowanie po biedronka.lista produktów w celu zadecydowania czy produkt ma być usunięty czy zostawiony
+ * a) jesli element ma tytuł === tytułowi z parametru funcji to nic
+ * b) jesli element ma tytuł rózny od tutuły z parametru to dodaj go do pusta tymczasowa lista
+ * 3) przypidanie poczatkowo pustej listy do biedronka.lista produktów
+ */ 
+function deleteProductFromShop(name:string){
+    
+    let produktyDoZostawienia: Product[] = []
+    biedronka.listOfProducts.forEach((rzecz)=>{
+        if (rzecz.name !== name) {
+          produktyDoZostawienia.push(rzecz)
+        }
+        })
+        biedronka.listOfProducts = produktyDoZostawienia
+        console.log(biedronka)
+}

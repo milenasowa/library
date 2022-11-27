@@ -5,20 +5,20 @@ body {
 }
 
 body #button {
-  width: 70px;
-  height: 50px;
+  width: 75px;
+  height: 60px;
   cursor: pointer;
   background-color: #45b2e1;
 }
 
-body #fantasyLibrary {
+body #biedronka {
   width: 80px;
   height: 80px;
   cursor: pointer;
   background-color: #2aa81c;
 }
 
-body #secondLibrary {
+body #auchan {
   width: 80px;
   height: 80px;
   cursor: pointer;
@@ -33,13 +33,13 @@ body #button_del {
 }
 
 body #button_move {
-  width: 70px;
-  height: 50px;
+  width: 85px;
+  height: 75px;
   cursor: pointer;
   background-color: #9142ca;
 }
 
-body #bookInfo {
+body #productInfo {
   width: 80px;
   height: 80px;
   cursor: pointer;
