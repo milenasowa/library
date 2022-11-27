@@ -51,4 +51,11 @@ body #line {
   height: 10px;
   background-color: black;
 }
+
+body #button_check {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  background-color: #e56262;
+}
 /*# sourceMappingURL=app.css.map */

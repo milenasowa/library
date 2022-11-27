@@ -31,7 +31,21 @@ class Shop {
         // sprawdzic czy ten uzytkownik ma uprawnienia do pobrania produktow
         return this.listOfProducts;
     }
-    existProduct(productName) {
+    /**
+     *1. this.list of products i iterowac po tym
+      2. jesli iterowany element.name  jest równy product name to
+     */
+    productExist(productName) {
+        let result;
+        this.listOfProducts.forEach((element) => {
+            if (element.name === productName) {
+                result = true;
+            }
+            else {
+                result = false;
+            }
+        });
+        return result;
     }
     setProducts(newListOfProducts) {
         this.listOfProducts = newListOfProducts;
@@ -44,7 +58,7 @@ class Shop {
         this.listOfProducts.push(product);
     }
 }
-let biedronkaListOfProducts = [bread, cola, butter];
+let biedronkaListOfProducts = [cola, butter, bread];
 let miliczListOfProduct = [milk, chocolade, water];
 let biedronka = new Shop("Biedronka", "Szamotuły", biedronkaListOfProducts);
 let auchan = new Shop("Auchan", "Milicz", miliczListOfProduct);
@@ -87,4 +101,12 @@ function deleteProductFromShop(name) {
     });
     biedronka.setProducts(produktyDoZostawienia);
     console.log(biedronka);
+}
+/**
+ *
+ * funkcja ta okresla czy dany produkt istnieje w biedronce
+ */
+function checkProduct(name) {
+    let produktIstnieje = biedronka.productExist(name);
+    console.log(produktIstnieje);
 }
