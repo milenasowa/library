@@ -12,6 +12,7 @@ class Product {
     weight: number;
     packed: boolean;
     value: Unit
+    
 
 }
 let listaMagazynowa: Product[] = []
@@ -29,6 +30,9 @@ listaMagazynowa.push(butter);
 listaMagazynowa.push(milk);
 listaMagazynowa.push(chocolade);
 listaMagazynowa.push(water);
+
+
+
 
 
 class Shop {
@@ -53,13 +57,13 @@ class Shop {
      */
 
     productExist(productName: string): boolean {
-        let result: boolean;
+        let result: boolean = false
+    
         this.listOfProducts.forEach((element)=>{
             if (element.name === productName) {
                 result = true
-            } else {
-                result = false
-            }
+            
+            } 
         })
         
 
@@ -77,6 +81,7 @@ class Shop {
     addProductToStore(product: Product): void {
         this.listOfProducts.push(product)
     }
+    
 
 }
 let biedronkaListOfProducts: Product[] = [cola, butter, bread];
@@ -134,8 +139,30 @@ function deleteProductFromShop(name: string) {
  * funkcja ta okresla czy dany produkt istnieje w biedronce
  */
 function checkProduct(name:string){
+    debugger
     let produktIstnieje: boolean = biedronka.productExist(name)
     
         
     console.log(produktIstnieje)
+}
+/**
+ * 1. 
+ * 2. iterowaie po lista magazynowa
+ * a) jeśli element ma value: unit === "l" to dodaj do pustej utworzonej listy
+ * 3. wyswietl zawartosc w console log
+ */
+function iloscProduktowLitry(){
+   
+    let valueProduktu: Product[] = []
+    let produkty = auchan.getProducts();
+
+
+    produkty.forEach((poValue)=>{
+       if (poValue.value === "l"){
+        valueProduktu.push(poValue)
+       }
+    })
+    
+    console.log(valueProduktu )
+
 }

@@ -36,13 +36,10 @@ class Shop {
       2. jesli iterowany element.name  jest równy product name to
      */
     productExist(productName) {
-        let result;
+        let result = false;
         this.listOfProducts.forEach((element) => {
             if (element.name === productName) {
                 result = true;
-            }
-            else {
-                result = false;
             }
         });
         return result;
@@ -107,6 +104,23 @@ function deleteProductFromShop(name) {
  * funkcja ta okresla czy dany produkt istnieje w biedronce
  */
 function checkProduct(name) {
+    debugger;
     let produktIstnieje = biedronka.productExist(name);
     console.log(produktIstnieje);
+}
+/**
+ * 1.
+ * 2. iterowaie po lista magazynowa
+ * a) jeśli element ma value: unit === "l" to dodaj do pustej utworzonej listy
+ * 3. wyswietl zawartosc w console log
+ */
+function iloscProduktowLitry() {
+    let valueProduktu = [];
+    let produkty = auchan.getProducts();
+    produkty.forEach((poValue) => {
+        if (poValue.value === "l") {
+            valueProduktu.push(poValue);
+        }
+    });
+    console.log(valueProduktu);
 }
