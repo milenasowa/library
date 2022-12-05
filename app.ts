@@ -51,8 +51,15 @@ class Product {
         }
         
     }
+    let biedronkaListaProduktów: Product[] = [];
+    biedronkaListaProduktów.push(bread)
+    biedronkaListaProduktów.push(coffee)
+    let biedronka = new Shop('biedronka', 'Poznan','dyskont',biedronkaListaProduktów )
 
-        
+    let auchanListaProduktów: Product[] = []
+    auchanListaProduktów.push(cola);
+    auchanListaProduktów.push(water)
+    let auchan = new Shop('zabka', 'Warszawa', 'male',auchanListaProduktów ) 
 
     
 
@@ -105,20 +112,21 @@ function iloscProduktowLitry() {
 /**Robi: wyświetlenie informacji o danym produkcie
  * 
  */
-function showProductInformaction(){
-    console.log("product information")
+function showProductInformaction(product:Product){
+    
+    console.log(product)
 }
 /** Robi: wyświetlenie zawartości sklepu biedronka
  * 
  */
 function showBiedronka(){
-    console.log('pokazuję biedronkę')
+    console.log(biedronka)
 }
 /**
  *Robi:  wyświetlenie zawartości sklepu auchan
  */
 function showAuchan(){
-    console.log ( 'pokazuję Auchan')
+    console.log ( auchan )
 }
 /**Robi: Przeniesienie określonego produktu między sklepami
  * 
