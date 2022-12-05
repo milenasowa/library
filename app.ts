@@ -1,5 +1,63 @@
 type Unit = "g" | "ml" | "l"
 
+class Product {
+    constructor ( name: string, weight: number, value: Unit){
+        this.name = name;
+        this.weight =  weight;
+        this.value = value;
+    }
+     name: string;
+     weight: number;
+     value: Unit
+        
+    }
+
+    let  listaMagazynowa: Product[] = []
+
+    let bread = new Product("chleb", 100, "g");
+    let water = new Product("woda", 1, "l");
+    let cola = new Product('cola', 1.5, 'l');
+    let cookies = new Product('ciastka', 100, 'g');
+    let coffee = new Product('kawa', 200, "g");
+    let juice = new Product (" sok", 500, "ml");
+
+    listaMagazynowa.push(bread);
+    listaMagazynowa.push(water);
+    listaMagazynowa.push(cola);
+    listaMagazynowa.push(cookies);
+    listaMagazynowa.push(coffee);
+    listaMagazynowa.push(juice)
+
+
+    class Shop {
+        constructor(name: string, city: string, type: string, productsList: Product[]){
+            this.name = name
+            this.city = city
+            this.type = type
+            this.productsList = this.productsList
+        }
+        private name:string
+        private city: string
+        private type: string
+        private productsList: Product[] = []
+
+        getProduct (): Product[] {
+          return this.productsList
+        }
+        
+        addProduct(product:Product): void{
+            this.productsList = newProductsList
+
+        }
+        
+    }
+
+        
+
+    
+
+
+
 
 /**Robi: dodawanie nowego produktu do listy produktów w danym sklepie
  * 1.utworzyc liste magazynowa
@@ -10,6 +68,8 @@ type Unit = "g" | "ml" | "l"
  * 
  */
 function addProductToShop(product: string) {
+    
+
     console.log(product)
 }
 
