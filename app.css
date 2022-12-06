@@ -65,4 +65,11 @@ body #button_litr {
   cursor: pointer;
   background-color: #386941;
 }
+
+body #button_weight {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  background-color: #907ecb;
+}
 /*# sourceMappingURL=app.css.map */
