@@ -53,6 +53,10 @@ class Shop {
     setWarehouseState(aaa: Product[]): void {
         this.productsList = aaa
     }
+    moveProductsAfterDelete(productAfterD: Product[]) {
+        this.productsList = productAfterD
+    }
+
 }
 let biedronkaListaProduktów: Product[] = [];
 biedronkaListaProduktów.push(bread)
@@ -152,29 +156,29 @@ function checkProduct(productName: string) {
  * 3. wyswietl zawartosc w console log
  */
 function iloscProduktowLitry() {
-    let produktyOkresloneValue: Product [] = []
+    let produktyOkresloneValue: Product[] = []
 
-    listaMagazynowa.forEach((produktZValue: Product)=>{
-        if (produktZValue.value === 'l'){
+    listaMagazynowa.forEach((produktZValue: Product) => {
+        if (produktZValue.value === 'l') {
             produktyOkresloneValue.push(produktZValue)
         }
     })
-    
+
     console.log(produktyOkresloneValue)
 
 }
 /**
  * funkcja ktora zwroci produkty z wartością wieksza lub równa dwa litry
  */
-function iloscProduktowWiekszychLubRownych (){
-     let wiekszeLubRowne: Product[] = []
+function iloscProduktowWiekszychLubRownych() {
+    let wiekszeLubRowne: Product[] = []
 
-     listaMagazynowa.forEach((productWeight: Product)=>{
-       if(productWeight.weight >= 2 && productWeight.value === 'l'){
-        wiekszeLubRowne.push(productWeight)
-       }
-     })
-     console.log(wiekszeLubRowne)
+    listaMagazynowa.forEach((productWeight: Product) => {
+        if (productWeight.weight >= 2 && productWeight.value === 'l') {
+            wiekszeLubRowne.push(productWeight)
+        }
+    })
+    console.log(wiekszeLubRowne)
 }
 
 /**Robi: wyświetlenie informacji o produkcie z listy magazynowej na podstawie nazwy produktu
@@ -201,8 +205,36 @@ function showAuchan() {
     console.log(auchan)
 }
 /**Robi: Przeniesienie określonego produktu między sklepami
- * 
+ * 1. utworzyc nową pustą zmienną
+ * 2. odnaleźć produkt w sklepie biedronka
+ * 3. jesli  naztywa produkt równa się nazwie uzytej w parametrze funkcji to przypisac go do zmiennej
+ * 4. jesli zmienna jest rozna od null to dodaj go do listy towarow w drugim sklepie
+ * 5. usunąć produkt z biedronki 
  */
-function moveProductsBetweenShops() {
-    console.log('przenoszę')
+function moveProductsBetweenShops(productName: string) {
+
+    let produktDoPrzeniesienia: Product
+    let listaPoUsunieciu: Product[] = []
+
+    biedronka.getProduct().forEach((product: Product) => {
+        if (product.name === productName) {
+            produktDoPrzeniesienia = product
+        }
+
+    })
+    if (produktDoPrzeniesienia !== null) {
+        auchan.addProductToStore(produktDoPrzeniesienia)
+    }
+
+    biedronka.getProduct().forEach((product: Product) => {
+        if (product.name !== productName) {
+            listaPoUsunieciu.push(product)
+        }
+        biedronka.moveProductsAfterDelete(listaPoUsunieciu)
+
+    })
+
+    console.log(auchan, biedronka)
 }
+
+

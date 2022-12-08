@@ -36,6 +36,9 @@ class Shop {
     setWarehouseState(aaa) {
         this.productsList = aaa;
     }
+    moveProductsAfterDelete(productAfterD) {
+        this.productsList = productAfterD;
+    }
 }
 let biedronkaListaProduktów = [];
 biedronkaListaProduktów.push(bread);
@@ -158,8 +161,28 @@ function showAuchan() {
     console.log(auchan);
 }
 /**Robi: Przeniesienie określonego produktu między sklepami
- *
+ * 1. utworzyc nową pustą zmienną
+ * 2. odnaleźć produkt w sklepie biedronka
+ * 3. jesli  naztywa produkt równa się nazwie uzytej w parametrze funkcji to przypisac go do zmiennej
+ * 4. jesli zmienna jest rozna od null to dodaj go do listy towarow w drugim sklepie
+ * 5. usunąć produkt z biedronki
  */
-function moveProductsBetweenShops() {
-    console.log('przenoszę');
+function moveProductsBetweenShops(productName) {
+    let produktDoPrzeniesienia;
+    let listaPoUsunieciu = [];
+    biedronka.getProduct().forEach((product) => {
+        if (product.name === productName) {
+            produktDoPrzeniesienia = product;
+        }
+    });
+    if (produktDoPrzeniesienia !== null) {
+        auchan.addProductToStore(produktDoPrzeniesienia);
+    }
+    biedronka.getProduct().forEach((product) => {
+        if (product.name !== productName) {
+            listaPoUsunieciu.push(product);
+        }
+        biedronka.moveProductsAfterDelete(listaPoUsunieciu);
+    });
+    console.log(auchan, biedronka);
 }
